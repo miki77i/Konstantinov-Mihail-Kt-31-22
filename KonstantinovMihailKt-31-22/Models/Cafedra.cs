@@ -8,7 +8,10 @@ namespace KonstantinovMihailKt_31_22.Models
 
         public string CafedraName { get; set; }
         public int AdminId { get; set; }
+
+        public int totalPrerods { get; set; }
         public DateTime dataosnovania { get; set; }
         public Prepods Admin { get; internal set; }
     }
+
 }

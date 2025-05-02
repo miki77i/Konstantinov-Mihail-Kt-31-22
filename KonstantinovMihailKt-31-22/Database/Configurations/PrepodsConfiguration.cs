@@ -42,7 +42,7 @@ namespace KonstantinovMihailKt_31_22.Database.Configurations
                 .HasComment("Фамилия преподавателя");
 
             builder.Property(p => p.DegreeId)
-                .HasColumnName("prepod_digreeId")
+                .HasColumnName("prepod_degreeId")
                 .HasColumnType(ColumnType.Int)
                 .HasComment("Степень преподавателя");
 
@@ -74,24 +74,24 @@ namespace KonstantinovMihailKt_31_22.Database.Configurations
                 .HasIndex(p => p.PositionId, $"idx_{tableName}_fk_position_id");
 
 
-            builder.Property(p => p.CafedraId)
-                .IsRequired()
-                .HasColumnName("prepod_cafedraId")
-                .HasColumnType(ColumnType.Int)
-                .HasComment("Кафедра преподавателя");
+            //builder.Property(p => p.CafedraId)
+            //    .IsRequired()
+            //    .HasColumnName("prepod_cafedraId")
+            //    .HasColumnType(ColumnType.Int)
+            //    .HasComment("Кафедра преподавателя");
 
 
-            builder.ToTable(tableName)
-                .HasOne(p => p.Cafedra)
-                .WithMany()
-                .HasForeignKey(p => p.CafedraId)
-                .HasConstraintName("fk_cafedra_id")
-                .OnDelete(DeleteBehavior.Cascade);
+            //builder.ToTable(tableName)
+            //    .HasOne(p => p.Cafedra)
+            //    .WithMany()
+            //    .HasForeignKey(p => p.CafedraId)
+            //    .HasConstraintName("fk_cafedra_id")
+            //    .OnDelete(DeleteBehavior.Cascade);
 
-            builder.ToTable(tableName)
-                .HasIndex(p => p.CafedraId, $"idx_{tableName}_fk_cafedra_id");
+            //builder.ToTable(tableName)
+            //    .HasIndex(p => p.CafedraId, $"idx_{tableName}_fk_cafedra_id");
 
-            builder.Navigation(p => p.Cafedra).AutoInclude();
+            //builder.Navigation(p => p.Cafedra).AutoInclude();
         }
 
     }

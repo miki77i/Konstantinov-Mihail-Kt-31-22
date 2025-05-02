@@ -28,6 +28,12 @@ namespace KonstantinovMihailKt_31_22.Database.Configurations
                 .HasColumnType(ColumnType.String).HasMaxLength(150)
                 .HasComment("Название кафедры");
 
+            builder.Property(p => p.totalPrerods)
+                .IsRequired()
+                .HasColumnName("total")
+                .HasColumnType(ColumnType.Int)
+                .HasComment("Количество преподавателей");
+
             builder.Property(p => p.dataosnovania)
                 .HasColumnName("date_Osnovania")
                 .HasColumnType(ColumnType.Date)
@@ -45,10 +51,11 @@ namespace KonstantinovMihailKt_31_22.Database.Configurations
                 .HasConstraintName("fk_admin_id_prepod_id")
                 .OnDelete(DeleteBehavior.Restrict);
 
+
             builder.ToTable(tableName)
                 .HasIndex(p => p.CafedraId, $"idx_{tableName}_fk_admin_id_prepod_id");
 
-            builder.Navigation(p => p.Admin).AutoInclude();
+            //builder.Navigation(p => p.Admin).AutoInclude();
 
         }
 
