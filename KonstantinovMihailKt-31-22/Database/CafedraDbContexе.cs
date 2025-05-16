@@ -4,13 +4,9 @@ using Microsoft.EntityFrameworkCore;
 
 namespace KonstantinovMihailKt_31_22.Database
 {
-    public class StudentDbContext : DbContext
+    public class CafedraDbContext : DbContext
     {
         DbSet <Cafedra> Cafedras { get; set; }
-        DbSet<Degrees> Degrees { get; set; }
-        DbSet<Disciplines> Disciplines { get; set; }
-        DbSet<Nagruzka> Nagruzkas { get; set; }
-        DbSet<Positions> Positions { get; set; }
         DbSet<Prepods> Prepods { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
@@ -22,10 +18,7 @@ namespace KonstantinovMihailKt_31_22.Database
             modelBuilder.ApplyConfiguration(new PositionsConfiguration());
             modelBuilder.ApplyConfiguration(new PrepodsConfiguration());
         }
-        public StudentDbContext(DbContextOptions options) : base(options)
-        {
-            
-
-        }
+        public CafedraDbContext(DbContextOptions<CafedraDbContext> options) : base(options)
+        {}
     }
 }

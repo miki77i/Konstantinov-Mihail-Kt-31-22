@@ -1,9 +1,7 @@
 ﻿namespace KonstantinovMihailKt_31_22.Models
 {
     public class Prepods
-
     {
-
         public int IdPrepod { get; set; }
         public string FirstName { get; set; }
 
@@ -17,7 +15,7 @@
         public int PositionId { get; set; }
         public Positions Positions { get; set; }
 
-        public int CafedraId { get; set; }
-        public Cafedra Cafedra { get; set; }
+        //public int CafedraId { get; set; }
+        //public Cafedra Cafedra { get; set; }
     }
 }
