@@ -3,6 +3,7 @@ using KonstantinovMihailKt_31_22.Middleware;
 using KonstantinovMihailKt_31_22.ServiceExtensions;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.OpenApi.Models;
 using NLog;
 using NLog.Web;
 using static KonstantinovMihailKt_31_22.ServiceExtensions.ServiceExtensions;

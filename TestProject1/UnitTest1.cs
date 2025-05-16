@@ -1,4 +1,4 @@
-namespace KonstantinovKt_31_20.Tests
+namespace TestProject1
 {
     public class UnitTest1
     {

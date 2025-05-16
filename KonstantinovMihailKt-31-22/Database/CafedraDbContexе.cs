@@ -6,8 +6,8 @@ namespace KonstantinovMihailKt_31_22.Database
 {
     public class CafedraDbContext : DbContext
     {
-        DbSet <Cafedra> Cafedras { get; set; }
-        DbSet<Prepods> Prepods { get; set; }
+        public DbSet <Cafedra> Cafedras { get; set; }
+        public DbSet<Prepods> Prepods { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
