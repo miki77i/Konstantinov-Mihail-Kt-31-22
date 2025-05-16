@@ -22,7 +22,7 @@ namespace KonstantinovMihailKt_31_22.Controllers
         }
 
         [HttpPost("GetCafedraByFilter")]
-        public async Task<IActionResult> GetCafedrasByFilterAsync([FromBody] CafedraFilter filter, CancellationToken cancellationToken = default)
+        public async Task<IActionResult> GetCafedrasByFilterAsync([FromQuery] CafedraFilter filter, CancellationToken cancellationToken = default)
         {
             var cafedra = await _cafedraService.GetCafedrasByFilterAsync(filter, cancellationToken);
             return Ok(cafedra);

@@ -1,5 +1,7 @@
 using KonstantinovMihailKt_31_22.Database;
+using KonstantinovMihailKt_31_22.Middleware;
 using KonstantinovMihailKt_31_22.ServiceExtensions;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using NLog;
 using NLog.Web;
@@ -38,6 +40,8 @@ try
         app.UseSwagger();
         app.UseSwaggerUI();
     }
+
+    app.UseMiddleware<ExceptionHandlerMiddleware>();
 
     app.UseAuthorization();
 

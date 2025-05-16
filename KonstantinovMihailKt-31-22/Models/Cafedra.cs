@@ -11,7 +11,7 @@ namespace KonstantinovMihailKt_31_22.Models
 
         public int totalPrerods { get; set; }
         public DateTime dataosnovania { get; set; }
-        public Prepods Admin { get; internal set; }
+        public Prepods Admin { get; set; } //internal
     }
 
 }

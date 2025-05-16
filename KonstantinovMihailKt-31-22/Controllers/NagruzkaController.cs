@@ -20,10 +20,16 @@ namespace KonstantinovMihailKt_31_22.Controllers
 
         [HttpPost("GetNagruzkaByFilter")]
 
-        public async Task<IActionResult> GetNagruzkaByFiltersAsync([FromBody] NagruzkaFilter filter, CancellationToken cancellationToken = default)
+        public async Task<IActionResult> GetNagruzkaByFiltersAsync([FromQuery] NagruzkaFilter filter, CancellationToken cancellationToken = default)
         {
             var nagruzka = await _nagruzkaService.GetNagruzkasByFiltersAsync(filter, cancellationToken);
             return Ok(nagruzka);
+        }
+
+        [HttpGet("error")]
+        public IActionResult TriggerError()
+        {
+            throw new Exception("Это тестовое исключение для проверки middleware");
         }
     }
 }
